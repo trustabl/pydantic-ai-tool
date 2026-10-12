@@ -38,6 +38,13 @@ result = agent.run_sync('Scan this repository and fix the confirmed findings.')
 print(result.output)
 ```
 
+**On Windows, use a container workspace rather than `LocalWorkspace`.** The
+example above raises `NotImplementedError` there, because Pydantic AI's
+`LocalWorkspaceBackend` is POSIX only at the moment: its timeout contract kills
+the whole process group, which Windows has no equivalent for. That is an
+upstream limitation rather than one this package adds, and everything else here
+works the same on all three platforms.
+
 ## Why it summarises
 
 A full scan of a large agent repository reaches several megabytes, far past what
