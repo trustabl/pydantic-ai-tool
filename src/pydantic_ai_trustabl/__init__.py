@@ -18,5 +18,5 @@ __all__ = [
     'summarize_scan',
 ]
 
-ENGINE_VERSION = '0.1.13'
+ENGINE_VERSION = '0.1.15'
 """Scanner release this package is pinned to. Kept in step with `[tool.trustabl]`."""

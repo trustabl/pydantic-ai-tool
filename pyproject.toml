@@ -28,7 +28,7 @@ Issues = "https://github.com/trustabl/pydantic-ai-tool/issues"
 # because the two change for different reasons: a packaging fix must not
 # imply a new engine, and an engine bump must not imply new package code.
 [tool.trustabl]
-engine-version = "0.1.13"
+engine-version = "0.1.15"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/pydantic_ai_trustabl"]
