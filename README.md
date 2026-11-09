@@ -65,7 +65,7 @@ Two details worth knowing:
 | Option | Default | What it does |
 |---|---|---|
 | `command` | `None` | Binary name or path. `None` resolves it automatically |
-| `engine_version` | `0.1.13` | Scanner release to download when none is on PATH |
+| `engine_version` | `0.1.16` | Scanner release to download when none is on PATH |
 | `severity_floor` | `medium` | Lowest severity returned. Counts ignore the floor |
 | `max_findings` | `50` | Cap on returned findings, worst first |
 | `timeout` | `600.0` | Seconds allowed for one scan |
