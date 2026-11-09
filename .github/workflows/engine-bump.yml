@@ -36,8 +36,11 @@ jobs:
                   ('pyproject.toml', 'engine-version = "%s"'),
                   ('src/pydantic_ai_trustabl/__init__.py', "ENGINE_VERSION = '%s'"),
                   ('src/pydantic_ai_trustabl/_capability.py', "_ENGINE_VERSION = '%s'"),
+                  ('README.md', '| `engine_version` | `%s` |'),
               ):
                   text = open(path, encoding='utf-8').read()
+                  if pattern % pinned not in text:
+                      raise SystemExit(f'{path}: no "{pattern % pinned}" to bump; the pins have drifted apart')
                   open(path, 'w', encoding='utf-8', newline='\n').write(
                       text.replace(pattern % pinned, pattern % latest))
               with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
